@@ -13,6 +13,7 @@
 
 .body {
     background-color: var(--gray);
+    transition: background-color .4s ease-in;
 }
 
 .form {
