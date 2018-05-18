@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no" />
+  <title>ReDoS Checker</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="body">
+  <form id="form" class="form">
+      <h1 class="title">Check your regex saftey!</h1>
+      <input id="regex" type="text" class="regex" />
+      <p class="message"></p>
+      <button id="sumbit" class="submit">Test!</button>
+  </form>
+
+  <a class="more-info" href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">
+    More info about the ReDoS attack vector
+  </a>
+  <script src="./safeRegex.js"></script>
+  <script>
+      const body = document.querySelector('body');
+      const message = document.querySelector('.message');
+      document.querySelector('#sumbit').addEventListener('click', doCheck);
+      document.querySelector('#form').addEventListener('submit', doCheck);
+
+      function doCheck(event) {
+        event.preventDefault();
+
+        const regex = document.querySelector('#regex').value;
+        let messageText = '';
+        if(safe(regex)) {
+          body.classList.remove('invalid');
+          body.classList.add('valid');
+          messageText = `I haven't found any problems with this regex.`;
+        } else {
+          body.classList.remove('valid');
+          body.classList.add('invalid');
+          messageText = `This regex is vulnerable, consider changing it.`;
+        }
+        message.innerHTML = messageText;
+      }
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+:root {
+    --green: rgb(68,187,6,.5);;
+    --red: rgba(255,72,64,.5);
+    --gray: #ddd;
+    --text: #444;
+}
+
+* {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px;
+    outline: none;
+}
+
+.body {
+    background-color: var(--gray);
+}
+
+.form {
+    margin: 20vh auto 0;
+    text-align: center;
+}
+
+.title {
+    font-size: 4.5rem;
+    color: var(--text);
+}
+
+.regex {
+    border: none;
+    border-bottom: 3px solid var(--text);
+    background-color: transparent;
+    padding: 5px 30px;
+    font-size: 3rem;
+    color: var(--text);
+}
+
+.message {
+    font-size: 1.8rem;
+}
+
+.submit {
+    margin-top: 42px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 10px 50px;
+    border: 3px solid var(--text);
+    background-color: transparent;
+    color: var(--text);
+    transition: transform .3s ease-in;
+    cursor: pointer;
+}
+
+.submit:hover {
+    transform: scale(1.1);
+}
+
+.valid .submit,
+.invalid .submit {
+    margin-top: 0;
+}
+
+.valid {
+    background-color: var(--green);
+}
+
+.invalid {
+    background-color: var(--red);
+}
+
+.more-info {
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+}
