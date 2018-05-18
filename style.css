@@ -1,5 +1,5 @@
 :root {
-    --green: rgb(68,187,6,.5);;
+    --green: rgba(68,187,6,.5);
     --red: rgba(255,72,64,.5);
     --gray: #ddd;
     --text: #444;
@@ -73,4 +73,15 @@
     width: 100%;
     text-align: center;
     font-size: 1.3rem;
+}
+
+.github-corner {
+    background-image: url('ght.png');
+    background-size: 110px 110px;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
